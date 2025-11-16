@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - IAlooker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #34495e;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .legal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 40px 0;
+        }
+        
+        .legal-content h2 {
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .legal-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .legal-content p {
+            margin-bottom: 15px;
+        }
+        
+        .legal-content ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .legal-content li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .legal-content {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Disclaimer</h1>
+            <p>Last updated: January 2025</p>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="legal-content">
+            <h2>1. Informational Purpose</h2>
+            <p>The content of this site is for informational and educational purposes only. We are not responsible for the use that visitors may make of the information provided.</p>
+            
+            <h2>2. Information Accuracy</h2>
+            <p>We strive to provide accurate and up-to-date information, but we do not guarantee the completeness or accuracy of all content.</p>
+            
+            <h2>3. External Links</h2>
+            <p>We are not responsible for the content of external websites linked from our site.</p>
+            
+            <h2>4. AI Tools</h2>
+            <p>Descriptions of AI tools are based on publicly available information. Prices and features may change without notice.</p>
+            
+            <h2>5. Affiliations</h2>
+            <p>We have no official affiliation with the companies mentioned, unless explicitly stated.</p>
+            
+            <h2>6. Professional Advice</h2>
+            <p>The information provided on this website does not constitute professional advice. Always consult with qualified professionals for specific guidance.</p>
+            
+            <p><em>Last updated: January 2025</em></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IAlooker. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
