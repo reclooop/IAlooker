@@ -867,54 +867,59 @@
             
             <div class="ai-tools-grid">
                 <!-- ChatGPT -->
-                <div class="ai-tool-card fade-in">
-                    <div class="tool-header">
-                        <div class="tool-title">
-                            <div class="tool-icon">
-                                <i class="fas fa-comment"></i>
-                            </div>
-                            <div class="tool-name">ChatGPT</div>
-                        </div>
-                        <span class="tool-category">Text Assistant</span>
-                    </div>
-                    <div class="tool-image">
-                        <img src="https://placehold.co/600x400/3498db/white?text=ChatGPT" alt="ChatGPT" style="width:100%;height:100%;object-fit:cover;">
-                    </div>
-                    <div class="tool-content">
-                        <div class="tool-description">
-                            <p>OpenAI's ChatGPT continues to dominate the AI assistant landscape with its advanced GPT-4.5 architecture. This powerful tool excels in natural language understanding, complex problem-solving, and multi-format content creation, making it indispensable for professionals across industries.</p>
-                        </div>
-                        <div class="tool-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Advanced GPT-4.5 Turbo architecture with 200K context window</li>
-                                <li>Multi-format file processing (PDF, Word, Excel, images, code files)</li>
-                                <li>Real-time web browsing with source verification</li>
-                                <li>Advanced code interpreter and data analysis capabilities</li>
-                                <li>Custom GPT creation and extensive plugin ecosystem</li>
-                            </ul>
-                        </div>
-                        <div class="pricing">
-                            <h4>Pricing Plans:</h4>
-                            <div class="pricing-plan">
-                                <span class="plan-name">ChatGPT Free</span>
-                                <span class="plan-price"><span class="free-badge">Free</span></span>
-                            </div>
-                            <div class="pricing-plan">
-                                <span class="plan-name">ChatGPT Plus</span>
-                                <span class="plan-price">$25/month <span class="paid-badge">Paid</span></span>
-                            </div>
-                            <div class="pricing-plan">
-                                <span class="plan-name">ChatGPT Team</span>
-                                <span class="plan-price">$30/user/month <span class="paid-badge">Paid</span></span>
-                            </div>
-                            <div class="pricing-plan">
-                                <span class="plan-name">ChatGPT Enterprise</span>
-                                <span class="plan-price">Custom pricing <span class="paid-badge">Paid</span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="ai-tool-card fade-in" itemscope itemtype="https://schema.org/SoftwareApplication">
+    <div class="tool-header">
+        <div class="tool-title">
+            <div class="tool-icon">
+                <i class="fas fa-comment"></i>
+            </div>
+            <h3 itemprop="name">ChatGPT</h3>
+        </div>
+        <span class="tool-category" itemprop="applicationCategory">BusinessApplication</span>
+    </div>
+    <div class="tool-image">
+        <img src="https://placehold.co/600x400/3498db/white?text=ChatGPT" 
+             alt="ChatGPT interface and dashboard 2025" 
+             loading="lazy">
+    </div>
+    <div class="tool-content">
+        <div class="tool-description" itemprop="description">
+            <p>OpenAI's ChatGPT continues to dominate the AI assistant landscape with its advanced GPT-4.5 architecture. This powerful tool excels in natural language understanding, complex problem-solving, and multi-format content creation, making it indispensable for professionals across industries.</p>
+        </div>
+        <div class="tool-features">
+            <h4>Key Features:</h4>
+            <ul>
+                <li>Advanced GPT-4.5 Turbo architecture with 200K context window</li>
+                <li>Multi-format file processing (PDF, Word, Excel, images, code files)</li>
+                <li>Real-time web browsing with source verification</li>
+                <li>Advanced code interpreter and data analysis capabilities</li>
+                <li>Custom GPT creation and extensive plugin ecosystem</li>
+            </ul>
+        </div>
+        <div class="pricing" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <h4>Pricing Plans:</h4>
+            <div class="pricing-plan">
+                <span class="plan-name">ChatGPT Free</span>
+                <span class="plan-price"><span class="free-badge">Free</span></span>
+            </div>
+            <div class="pricing-plan">
+                <span class="plan-name" itemprop="name">ChatGPT Plus</span>
+                <span class="plan-price" itemprop="price" content="25">$25/month <span class="paid-badge">Paid</span></span>
+                <meta itemprop="priceCurrency" content="USD">
+            </div>
+            <div class="pricing-plan">
+                <span class="plan-name">ChatGPT Team</span>
+                <span class="plan-price">$30/user/month <span class="paid-badge">Paid</span></span>
+            </div>
+            <div class="pricing-plan">
+                <span class="plan-name">ChatGPT Enterprise</span>
+                <span class="plan-price">Custom pricing <span class="paid-badge">Paid</span></span>
+            </div>
+        </div>
+    </div>
+    <meta itemprop="operatingSystem" content="Web">
+    <meta itemprop="url" content="https://chat.openai.com">
+</div>
                 
                 <!-- Claude -->
                 <div class="ai-tool-card fade-in">
