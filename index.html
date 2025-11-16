@@ -920,7 +920,7 @@
                             <h4>Key Features:</h4>
                             <ul>
                                 <li>Massive 400K token context window (Claude 3.5 Sonnet)</li>
-                                <li>Advanced document analysis with multi-format support</li>
+                                <li>Advanced  analysis with multi-format support</li>
                                 <li>Constitutional AI framework for safety and alignment</li>
                                 <li>Superior reasoning capabilities for complex problems</li>
                                 <li>Enterprise-grade security and compliance features</li>
@@ -1183,19 +1183,19 @@
                             </div>
                             <div class="tool-name">Gamma</div>
                         </div>
-                        <span class="tool-category">Presentations & Documents</span>
+                        <span class="tool-category">Presentations & s</span>
                     </div>
                     <div class="tool-image">
                         [Space for Gamma image]
                     </div>
                     <div class="tool-content">
                         <div class="tool-description">
-                            <p>Gamma leverages AI to transform how professionals create presentations, documents, and web pages. With automated design and intelligent content structuring, it enables the creation of professional materials in minutes rather than hours.</p>
+                            <p>Gamma leverages AI to transform how professionals create presentations, s, and web pages. With automated design and intelligent content structuring, it enables the creation of professional materials in minutes rather than hours.</p>
                         </div>
                         <div class="tool-features">
                             <h4>Key Features:</h4>
                             <ul>
-                                <li>AI-powered presentation and document generation</li>
+                                <li>AI-powered presentation and  generation</li>
                                 <li>Automated responsive design and layout optimization</li>
                                 <li>Professional templates and styling options</li>
                                 <li>Real-time collaboration features</li>
@@ -1242,7 +1242,7 @@
                             <h4>Key Features:</h4>
                             <ul>
                                 <li>Context-aware writing assistance within Notion</li>
-                                <li>Automatic document summarization and analysis</li>
+                                <li>Automatic  summarization and analysis</li>
                                 <li>Task list and table generation from natural language</li>
                                 <li>Integrated translation capabilities</li>
                                 <li>Content improvement and enhancement tools</li>
@@ -1499,7 +1499,7 @@
                     <div class="guide-steps">
                         <div class="guide-step">
                             <div class="step-number">1</div>
-                            <div class="step-content">Identify repetitive tasks that can be automated - document analysis, email drafting, data entry</div>
+                            <div class="step-content">Identify repetitive tasks that can be automated -  analysis, email drafting, data entry</div>
                         </div>
                         <div class="guide-step">
                             <div class="step-number">2</div>
@@ -1614,7 +1614,7 @@
                     <h3>For Developers & Technicians</h3>
                     <div class="prompt-item">
                         <div class="prompt-text">"Explain this code snippet [paste code] comprehensively for a beginner programmer, highlighting its main function, how it works step by step, potential use cases, and any important programming concepts it demonstrates."</div>
-                        <div class="prompt-use">Code understanding and documentation</div>
+                        <div class="prompt-use">Code understanding and ation</div>
                     </div>
                     <div class="prompt-item">
                         <div class="prompt-text">"Debug this code [paste code] by identifying potential errors, logical issues, and performance bottlenecks. Provide the corrected version with detailed explanations of each fix and suggestions for improvement."</div>
@@ -1852,8 +1852,21 @@
         // Handle contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
-            this.reset();
+    
+            fetch('https://formspree.io/f/xovypodj', {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {'Accept': 'application/json'}
+            }).then(response => {
+                if (response.ok) {
+                    alert('✅ Message sent successfully! We will contact you soon.');
+                    this.reset();
+                } else {
+                    alert('❌ Error sending message. Please try again.');
+                }
+            }).catch(error => {
+                alert('❌ Connection error. Please check your internet.');
+            });
         });
         
         // Scroll animation
