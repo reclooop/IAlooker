@@ -1037,83 +1037,130 @@
         font-size: 1.1rem;
     }
 }
-        /* ÍNDICE LATERAL */
-        .sidebar-index {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: white;
-            border-radius: 10px;
-            padding: 20px 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            max-width: 200px;
-        }
+         /* ÍNDICE LATERAL COLAPSABLE */
+.sidebar-toggle {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 1001;
+    background: white;
+    border: 1px solid #d1d8e0;
+    border-radius: 6px;
+    padding: 12px 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
 
-        .sidebar-index h3 {
-            margin-bottom: 15px;
-            color: var(--secondary);
-            font-size: 1rem;
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-        }
+.sidebar-toggle:hover {
+    background: var(--light);
+    transform: scale(1.05);
+}
 
-        .index-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.sidebar-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--secondary);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 1px;
+}
 
-        .index-links li {
-            margin-bottom: 8px;
-        }
+.sidebar-index {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: 10px;
+    padding: 20px 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-width: 200px;
+    border: 1px solid #d1d8e0; /* Borde gris claro visible */
+    transition: all 0.3s ease;
+}
 
-        .index-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            display: block;
-            padding: 8px 12px;
-            border-radius: 6px;
-            border-left: 3px solid transparent;
-        }
+.sidebar-index.collapsed {
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
 
-        .index-links a:hover {
-            color: var(--primary);
-            background: var(--light);
-            border-left: 3px solid var(--primary);
-        }
-        /* Submenús del índice lateral */
-        .index-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 5px 0 5px 15px;
-            border-left: 2px solid var(--light);
-        }
+.sidebar-index h3 {
+    margin-bottom: 15px;
+    color: var(--secondary);
+    font-size: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
 
-        .index-links ul li {
-            margin-bottom: 5px;
-        }
+.index-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .index-links ul a {
-            font-size: 0.8rem !important;
-            padding: 4px 8px !important;
-            color: #666 !important;
-        }
+.index-links li {
+    margin-bottom: 8px;
+}
 
-        .index-links ul a:hover {
-            color: var(--primary) !important;
-            background: var(--light) !important;
-        }
-        /* Responsive - se oculta en móviles */
-        @media (max-width: 1024px) {
-            .sidebar-index {
-                display: none;
-            }
-        }    
+.index-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+}
+
+.index-links a:hover {
+    color: var(--primary);
+    background: var(--light);
+    border-left: 3px solid var(--primary);
+}
+
+/* Submenús del índice lateral */
+.index-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 5px 15px;
+    border-left: 2px solid var(--light);
+}
+
+.index-links ul li {
+    margin-bottom: 5px;
+}
+
+.index-links ul a {
+    font-size: 0.8rem !important;
+    padding: 4px 8px !important;
+    color: #666 !important;
+}
+
+.index-links ul a:hover {
+    color: var(--primary) !important;
+    background: var(--light) !important;
+}
+
+/* En desktop se muestra siempre, en móvil se oculta */
+@media (max-width: 1024px) {
+    .sidebar-index {
+        transform: translateX(-100%) translateY(-50%);
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar-index.active {
+        transform: translateY(-50%);
+        opacity: 1;
+        pointer-events: all;
+    }
+}  
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -1126,6 +1173,12 @@
     </style>
 </head>
 <body>
+    <!-- Botón toggle para la barra lateral -->
+    <div class="sidebar-toggle" id="sidebarToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
@@ -3189,6 +3242,31 @@ function toggleCategory(categoryId) {
         icon.classList.add('rotated');
     }
 }
+         // Toggle sidebar functionality
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarIndex = document.querySelector('.sidebar-index');
+
+    if (sidebarToggle && sidebarIndex) {
+        sidebarToggle.addEventListener('click', function() {
+            sidebarIndex.classList.toggle('collapsed');
+            sidebarIndex.classList.toggle('active');
+        });
+        
+        // Cerrar sidebar al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!sidebarIndex.contains(event.target) && !sidebarToggle.contains(event.target)) {
+                if (window.innerWidth <= 1024) {
+                    sidebarIndex.classList.add('collapsed');
+                    sidebarIndex.classList.remove('active');
+                }
+            }
+        });
+        
+        // En móviles, empezar con sidebar oculto
+        if (window.innerWidth <= 1024) {
+            sidebarIndex.classList.add('collapsed');
+        }
+    }
     </script>
 </body>
 </html>
