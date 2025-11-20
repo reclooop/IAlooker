@@ -745,7 +745,87 @@
         .legal-content li {
             margin-bottom: 10px;
         }
-        
+        /* Gemini Article Promo Banner */
+        .gemini-promo-banner {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gemini-promo-banner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(66, 133, 244, 0.4);
+        }
+
+        .gemini-promo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .gemini-promo-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gemini-promo-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .gemini-promo-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .gemini-promo-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .gemini-promo-btn {
+            display: inline-block;
+            background: white;
+            color: #4285f4;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .gemini-promo-btn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+            transform: translateY(-2px);
+        }
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -795,6 +875,15 @@
             
             .legal-content {
                 padding: 30px 20px;
+            }
+            /* Gemini Promo Banner Mobile */
+            .gemini-promo-banner {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .gemini-promo-banner h3 {
+                font-size: 1.5rem;
             }
         }
         /* Student Hacks Accordion Styles */
@@ -1231,6 +1320,19 @@
         <div class="container">
             <div class="intro fade-in">
                 <p>Welcome to AIlooker, your ultimate destination for discovering and comparing Artificial Intelligence tools. Our platform provides in-depth analysis, detailed comparisons, and practical guides to help you select the perfect AI solutions for your work, studies, and creative endeavors. We thoroughly examine each tool's capabilities, technical specifications, and pricing structures to empower your decision-making process.</p>
+            </div>
+            <!-- Gemini Article Promo Banner -->
+            <div class="gemini-promo-banner fade-in" onclick="location.href='gemini-3-pro.html'" style="cursor: pointer;">
+                <div class="gemini-promo-content">
+                    <div class="gemini-promo-badge">
+                        <i class="fas fa-bell" style="margin-right: 8px;"></i>NEW ARTICLE
+                    </div>
+                    <h3>Deep Dive: Gemini 3 Pro Complete Analysis</h3>
+                    <p>Explore our comprehensive technical breakdown of Google's revolutionary multimodal AI. Detailed specifications, advanced prompts, and professional comparison vs ChatGPT-5. Everything you need to master Gemini 3 Pro.</p>
+                    <a href="gemini-3-pro.html" class="gemini-promo-btn" onclick="event.stopPropagation()">
+                        <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>Read Full Analysis
+                    </a>
+                </div>
             </div>
         </div>
     </section>
